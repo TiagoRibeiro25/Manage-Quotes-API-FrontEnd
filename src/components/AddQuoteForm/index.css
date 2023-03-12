@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.form-container {
+	height: 600px;
+}
+
+.quote-input {
+	height: 180px;
+	resize: none;
+}

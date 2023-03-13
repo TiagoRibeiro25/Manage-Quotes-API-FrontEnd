@@ -105,7 +105,7 @@ export default function AddQuoteForm() {
 				)}
 			</div>
 
-			<SubmitButton text="Add Quote" onClick={addQuote} />
+			<SubmitButton text="Add Quote" onClick={addQuote} isDisabled={adding} />
 		</div>
 	);
 }

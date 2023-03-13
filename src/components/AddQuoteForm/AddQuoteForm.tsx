@@ -24,7 +24,7 @@ export default function AddQuoteForm() {
 	const [message, setMessage] = useState<string>("");
 	const [adding, setAdding] = useState<boolean>(false);
 
-	const verifyForm = () => {
+	const verifyForm = (): boolean => {
 		if (!isInputValid(content)) {
 			setMessage("Invalid Quote");
 			return false;
@@ -40,16 +40,19 @@ export default function AddQuoteForm() {
 		return true;
 	};
 
-	const addQuote = async () => {
+	const resetForm = (): void => {
+		setContent("");
+		setAuthor("");
+		if (!rememberAuthKey) setAuthKey("");
+	};
+
+	const addQuote = async (): Promise<void> => {
 		setAdding(true);
 		setLocalStorage("remember_auth_key", rememberAuthKey);
 		if (rememberAuthKey) setLocalStorage("auth_key", authKey);
 		else removeLocalStorage("auth_key");
 
-		if (!verifyForm()) {
-			setAdding(false);
-			return;
-		}
+		if (!verifyForm()) return setAdding(false);
 
 		try {
 			const response = await axios.post(
@@ -58,9 +61,9 @@ export default function AddQuoteForm() {
 				{ headers: { auth_key: authKey, "Content-Type": "application/json" } }
 			);
 
-			console.log(response);
 			setMessage(response.data.message);
 			setAdding(false);
+			resetForm();
 		} catch (err) {
 			console.log(err);
 			setMessage("Error adding quote");

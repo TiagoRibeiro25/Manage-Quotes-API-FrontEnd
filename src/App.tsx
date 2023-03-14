@@ -24,7 +24,7 @@ function App() {
 						<SearchInput placeholder="Search..." onSearch={handleSearch} />
 						<QuotesList searchInput={searchInput} />
 					</div>
-					<div className="w-full lg:w-1/2 lg:pr-12 lg:mt-0 mt-6 float-right flex justify-center items-center flex-wrap pb-10">
+					<div className="w-full lg:w-1/2 lg:pl-12 lg:mt-0 mt-6 float-right flex justify-center items-center flex-wrap pb-10">
 						<h2 className="w-full text-3xl font-bold text-white text-center">
 							Add New Quote
 						</h2>

@@ -56,7 +56,7 @@ export default function AddQuoteForm() {
 
 		try {
 			const response = await axios.post(
-				"https://quotes-api-fkca.onrender.com/api/quotes/add",
+				"https://get-quotes-api.cyclic.app/api/quotes/add",
 				{ author, content },
 				{ headers: { auth_key: authKey, "Content-Type": "application/json" } }
 			);

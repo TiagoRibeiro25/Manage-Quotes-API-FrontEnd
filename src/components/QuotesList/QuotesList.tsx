@@ -11,7 +11,7 @@ export default function QuotesList(props: QuotesListProps) {
 
 	useEffect(() => {
 		axios
-			.get("https://quotes-api-fkca.onrender.com/api/quotes")
+			.get("https://get-quotes-api.cyclic.app/api/quotes")
 			.then((res) => {
 				setQuotes(res.data);
 				setLoading(false);

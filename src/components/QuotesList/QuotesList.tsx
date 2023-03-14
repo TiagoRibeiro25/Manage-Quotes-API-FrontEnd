@@ -37,11 +37,7 @@ export default function QuotesList(props: QuotesListProps) {
 		else {
 			content = filteredQuotes.map((quote) => {
 				return (
-					<QuoteInfo
-						key={quote.content}
-						author={quote.author}
-						content={quote.content}
-					/>
+					<QuoteInfo key={quote._id} author={quote.author} content={quote.content} />
 				);
 			});
 		}

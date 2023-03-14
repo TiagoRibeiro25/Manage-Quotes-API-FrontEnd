@@ -8,6 +8,12 @@ export interface QuotesListProps {
 }
 
 export interface Quote {
+	_id: string;
+	author: string;
+	content: string;
+}
+
+export interface QuoteProps {
 	author: string;
 	content: string;
 }

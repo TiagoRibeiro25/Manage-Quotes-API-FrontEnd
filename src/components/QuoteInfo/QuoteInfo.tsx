@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Quote } from "../../types/interfaces";
+import { QuoteProps } from "../../types/interfaces";
 import "./index.css";
 
-export default function QuoteInfo(props: Quote) {
+export default function QuoteInfo(props: QuoteProps) {
 	const [copied, setCopied] = useState<boolean>(false);
 
 	const handleClick = () => {

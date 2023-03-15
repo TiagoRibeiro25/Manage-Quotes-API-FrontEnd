@@ -5,10 +5,7 @@ import SearchInput from "./components/SearchInput/SearchInput";
 
 function App() {
 	const [searchInput, setSearchInput] = useState<string>("");
-
-	const handleSearch = (query: string) => {
-		setSearchInput(query);
-	};
+	const handleSearch = (query: string) => setSearchInput(query);
 
 	return (
 		<div className="App">

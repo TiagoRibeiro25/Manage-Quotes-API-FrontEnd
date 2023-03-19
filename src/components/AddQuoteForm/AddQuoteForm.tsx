@@ -64,9 +64,10 @@ export default function AddQuoteForm() {
 			setMessage(response.data.message);
 			setAdding(false);
 			resetForm();
-		} catch (err) {
-			console.log(err);
-			setMessage("Error adding quote");
+		} catch (err: Error | any) {
+			if (err.response.status === 401) setMessage("Invalid API Key");
+			else if (err.response.status === 400) setMessage("Invalid Quote");
+			else setMessage("Something went wrong, please try again later");
 			setAdding(false);
 		}
 	};
@@ -104,7 +105,7 @@ export default function AddQuoteForm() {
 				{adding ? (
 					<LoadingIcon />
 				) : (
-					<span className="text-white text-xl">{message}</span>
+					<span className="text-white text-xl text-center">{message}</span>
 				)}
 			</div>
 

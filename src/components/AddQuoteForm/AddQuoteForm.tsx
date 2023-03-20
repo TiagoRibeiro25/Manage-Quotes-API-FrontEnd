@@ -6,10 +6,10 @@ import {
 	removeLocalStorage,
 	setLocalStorage,
 } from "../../utils/localStorage";
+import Button from "../Button/Button";
 import Checkbox from "../Checkbox/Checkbox";
 import FormInput from "../FormInput/FormInput";
 import LoadingIcon from "../LoadingIcon/LoadingIcon";
-import SubmitButton from "../SubmitButton/SubmitButton";
 import "./index.css";
 
 export default function AddQuoteForm() {
@@ -109,7 +109,9 @@ export default function AddQuoteForm() {
 				)}
 			</div>
 
-			<SubmitButton text="Add Quote" onClick={addQuote} isDisabled={adding} />
+			<div className="mt-6">
+				<Button text="Add Quote" onClick={addQuote} isDisabled={adding} />
+			</div>
 		</div>
 	);
 }

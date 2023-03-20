@@ -13,6 +13,27 @@ export interface Quote {
 	content: string;
 }
 
+export interface QuoteProps {
+	id: string;
+	author: string;
+	content: string;
+	onClick: (id: string) => void;
+}
+
+export interface QuoteOptionsProps {
+	quote: Quote | undefined;
+	isOpened: boolean;
+	onDelete: (apiKey: string) => void;
+	onCopy: () => void;
+	onClose: () => void;
+	deleting: boolean;
+}
+
+export interface QuoteOptionsHeaderModalProps {
+	title: string;
+	onClose: () => void;
+}
+
 export interface FormInputProps {
 	type: "input" | "textarea";
 	placeholder: string;

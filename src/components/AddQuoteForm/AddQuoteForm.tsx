@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { QuoteFormProps } from "../../types/interfaces";
 import { isInputValid } from "../../utils/checkElement";
 import {
 	getLocalStorage,
@@ -12,7 +13,7 @@ import FormInput from "../FormInput/FormInput";
 import LoadingIcon from "../LoadingIcon/LoadingIcon";
 import "./index.css";
 
-export default function AddQuoteForm() {
+export default function AddQuoteForm(props: QuoteFormProps) {
 	const [content, setContent] = useState<string>("");
 	const [author, setAuthor] = useState<string>("");
 	const [rememberAuthKey, setRememberAuthKey] = useState<boolean>(
@@ -64,6 +65,7 @@ export default function AddQuoteForm() {
 			setMessage(response.data.message);
 			setAdding(false);
 			resetForm();
+			props.onSubmit();
 		} catch (err: Error | any) {
 			if (err.response.status === 401) setMessage("Invalid API Key");
 			else if (err.response.status === 400) setMessage("Invalid Quote");

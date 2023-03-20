@@ -5,6 +5,7 @@ export interface SearchInputProps {
 
 export interface QuotesListProps {
 	searchInput: string;
+	updateListDependency: boolean;
 }
 
 export interface Quote {
@@ -51,4 +52,8 @@ export interface ButtonProps {
 	text: string;
 	onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 	isDisabled: boolean;
+}
+
+export interface QuoteFormProps {
+	onSubmit: () => void;
 }

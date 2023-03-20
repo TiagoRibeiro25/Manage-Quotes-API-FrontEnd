@@ -25,7 +25,7 @@ export default function QuotesList(props: QuotesListProps) {
 				console.log(err);
 				setLoading(false);
 			});
-	}, []);
+	}, [props.updateListDependency]);
 
 	const handleQuoteClick = (id: string) => {
 		const quote: Quote | undefined = quotes.find((quote) => quote._id === id);

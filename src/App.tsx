@@ -5,6 +5,7 @@ import SearchInput from "./components/SearchInput/SearchInput";
 
 function App() {
 	const [searchInput, setSearchInput] = useState<string>("");
+	const [updateListDependency, setUpdateListDependency] = useState<boolean>(false);
 	const handleSearch = (query: string) => setSearchInput(query);
 
 	return (
@@ -19,13 +20,18 @@ function App() {
 				<main className="mt-12 pt-6">
 					<div className="w-full lg:w-1/2 lg:pr-12 float-left flex justify-center items-center flex-wrap pb-10">
 						<SearchInput placeholder="Search..." onSearch={handleSearch} />
-						<QuotesList searchInput={searchInput} />
+						<QuotesList
+							searchInput={searchInput}
+							updateListDependency={updateListDependency}
+						/>
 					</div>
 					<div className="w-full lg:w-1/2 lg:pl-12 lg:mt-0 mt-6 float-right flex justify-center items-center flex-wrap pb-10">
 						<h2 className="w-full text-3xl font-bold text-white text-center">
 							Add New Quote
 						</h2>
-						<AddQuoteForm />
+						<AddQuoteForm
+							onSubmit={() => setUpdateListDependency(!updateListDependency)}
+						/>
 					</div>
 				</main>
 			</div>

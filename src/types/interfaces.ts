@@ -13,11 +13,6 @@ export interface Quote {
 	content: string;
 }
 
-export interface QuoteProps {
-	author: string;
-	content: string;
-}
-
 export interface FormInputProps {
 	type: "input" | "textarea";
 	placeholder: string;

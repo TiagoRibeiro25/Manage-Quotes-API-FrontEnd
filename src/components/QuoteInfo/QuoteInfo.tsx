@@ -41,9 +41,12 @@ export default function QuoteInfo(props: QuoteProps) {
 			onClick={handleClick}
 		>
 			<h2 className="text-lg font-semibold text-start text-gray-100">{props.content}</h2>
-			<p className="text-right text-gray-400 text-sm font-semibold mt-2">
-				{props.author}
-			</p>
+			<div className="flex justify-between">
+				<p className="text-left text-gray-400 text-sm font-semibold mt-2">{props._id}</p>
+				<p className="text-right text-gray-400 text-sm font-semibold mt-2">
+					{props.author}
+				</p>
+			</div>
 		</div>
 	);
 }

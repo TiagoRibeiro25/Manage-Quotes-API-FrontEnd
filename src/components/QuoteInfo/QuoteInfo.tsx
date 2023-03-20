@@ -1,35 +1,19 @@
 import { useState } from "react";
-import { QuoteProps } from "../../types/interfaces";
+import { Quote } from "../../types/interfaces";
+import { showNotification } from "../../utils/showNotification";
 import "./index.css";
 
-export default function QuoteInfo(props: QuoteProps) {
+export default function QuoteInfo(props: Quote) {
 	const [copied, setCopied] = useState<boolean>(false);
 
 	const handleClick = () => {
 		navigator.clipboard.writeText(props.content);
 		setCopied(true);
 
-		const div = document.createElement("div");
-		div.className =
-			"quote-notification absolute top-0 right-0 mt-4 mr-3 p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex";
-		div.setAttribute("role", "alert");
-		div.innerHTML = `
-         <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">
-            Copied
-         </span>
-         <span class="font-semibold mr-2 text-left flex-auto">
-            Quote copied to clipboard!
-         </span>
-      `;
-
-		document.body.appendChild(div);
+		showNotification("copied", "Quote copied to clipboard!");
 
 		setTimeout(() => {
 			setCopied(false);
-
-			setTimeout(() => {
-				div.remove();
-			}, 2000);
 		}, 500);
 	};
 

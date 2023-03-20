@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { QuoteOptionsProps } from "../../types/interfaces";
 import { isInputValid } from "../../utils/checkElement";
+import { getLocalStorage } from "../../utils/localStorage";
 import Button from "../Button/Button";
 import FormInput from "../FormInput/FormInput";
 import LoadingIcon from "../LoadingIcon/LoadingIcon";
@@ -8,7 +9,7 @@ import ModalHeader from "./ModalHeader";
 
 export default function QuoteOptions(props: QuoteOptionsProps) {
 	const [showConfirmDelete, setShowConfirmDelete] = useState<boolean>(false);
-	const [authKey, setAuthKey] = useState<string>("");
+	const [authKey, setAuthKey] = useState<string>(getLocalStorage("auth_key") || "");
 
 	if (!props.isOpened) return <></>; // If the modal is not opened, return an empty fragment
 

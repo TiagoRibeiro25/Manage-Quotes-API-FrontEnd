@@ -57,7 +57,7 @@ export default function AddQuoteForm(props: QuoteFormProps) {
 
 		try {
 			const response = await axios.post(
-				"https://get-quotes-api.cyclic.app/api/quotes/add",
+				"https://get-quotes-api.cyclic.app/api/quotes",
 				{ author, content },
 				{ headers: { auth_key: authKey, "Content-Type": "application/json" } }
 			);

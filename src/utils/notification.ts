@@ -20,7 +20,7 @@ export function copyQuote(title: string, message: string, quote: Quote) {
 
 	document.body.appendChild(div);
 
-	setTimeout(() => {
+	setTimeout((): void => {
 		div.remove();
 	}, 3000);
 }
@@ -43,7 +43,7 @@ export function deleteQuote(title: string, message: string) {
 
 	document.body.appendChild(div);
 
-	setTimeout(() => {
+	setTimeout((): void => {
 		div.remove();
 	}, 3000);
 }

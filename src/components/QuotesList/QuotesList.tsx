@@ -41,7 +41,7 @@ export default function QuotesList(props: QuotesListProps) {
 		setDeleting(true);
 		try {
 			const response = await axios.delete(
-				`https://get-quotes-api.cyclic.app/api/quotes/delete/${selectedQuote?._id}`,
+				`https://get-quotes-api.cyclic.app/api/quotes/${selectedQuote?._id}`,
 				{ headers: { auth_key: authKey, "Content-Type": "application/json" } }
 			);
 			setQuotes(quotes.filter((quote) => quote._id !== selectedQuote?._id));

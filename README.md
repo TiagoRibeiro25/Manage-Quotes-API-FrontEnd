@@ -1,6 +1,6 @@
 # Manage Quotes API Frontend
 
-This is a frontend for the Manage Quotes API. It is a simple React app that allows you to read,add and delete (soon) quotes from the API.
+This is a frontend for the Manage Quotes API. It is a simple React app that allows you to read,add and delete quotes from the API.
 
 ## Getting Started
 

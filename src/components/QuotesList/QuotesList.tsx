@@ -68,11 +68,9 @@ export default function QuotesList(props: QuotesListProps) {
 			return searchRegex.test(quote.content) || searchRegex.test(quote.author);
 		});
 
-		if (filteredQuotes.length === 0)
-			content = (
-				<p className="text-white text-center text-2xl font-bold">No quotes found.</p>
-			);
-		else {
+		if (filteredQuotes.length === 0) {
+			content = <p className="text-white text-center text-2xl font-bold">No quotes found.</p>;
+		} else {
 			content = filteredQuotes.map((quote) => {
 				return (
 					<QuoteInfo

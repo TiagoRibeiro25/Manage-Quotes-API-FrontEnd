@@ -12,9 +12,7 @@ function App() {
 		<div className="App">
 			<div className="container mx-auto px-5">
 				<header className="w-full h-20 flex justify-center items-center">
-					<h1 className="text-4xl font-bold text-white text-center">
-						Manage Quotes API
-					</h1>
+					<h1 className="text-4xl font-bold text-white text-center">Manage Quotes API</h1>
 				</header>
 				<hr />
 				<main className="mt-12 pt-6">
@@ -29,9 +27,7 @@ function App() {
 						<h2 className="w-full text-3xl font-bold text-white text-center">
 							Add New Quote
 						</h2>
-						<AddQuoteForm
-							onSubmit={() => setUpdateListDependency(!updateListDependency)}
-						/>
+						<AddQuoteForm onSubmit={() => setUpdateListDependency(!updateListDependency)} />
 					</div>
 				</main>
 			</div>

@@ -3,12 +3,10 @@ import { QuoteOptionsHeaderModalProps } from "../../types/interfaces";
 export default function ModalHeader(props: QuoteOptionsHeaderModalProps) {
 	return (
 		<div className="flex items-start justify-between p-4 border-b rounded-t border-gray-600">
-			<h3 className="w-full text-center text-2xl font-semibold text-white">
-				{props.title}
-			</h3>
+			<h3 className="w-full text-center text-2xl font-semibold text-white">{props.title}</h3>
 			<button
 				type="button"
-				className="text-gray-400 bg-transparent  rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-gray-600 hover:text-white"
+				className="text-gray-400 bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-gray-600 hover:text-white"
 				data-modal-hide="staticModal"
 				onClick={props.onClose}
 			>

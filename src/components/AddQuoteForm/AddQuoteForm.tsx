@@ -2,11 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import { QuoteFormProps } from "../../types/interfaces";
 import { isInputValid } from "../../utils/checkElement";
-import {
-	getLocalStorage,
-	removeLocalStorage,
-	setLocalStorage,
-} from "../../utils/localStorage";
+import { getLocalStorage, removeLocalStorage, setLocalStorage } from "../../utils/localStorage";
 import Button from "../Button/Button";
 import Checkbox from "../Checkbox/Checkbox";
 import FormInput from "../FormInput/FormInput";

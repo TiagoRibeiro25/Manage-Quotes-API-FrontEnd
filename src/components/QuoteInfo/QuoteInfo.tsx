@@ -10,9 +10,7 @@ export default function QuoteInfo(props: QuoteProps) {
 			<h2 className="text-lg font-semibold text-start text-gray-100">{props.content}</h2>
 			<div className="flex justify-between">
 				<p className="text-left text-gray-400 text-sm font-semibold mt-2">{props.id}</p>
-				<p className="text-right text-gray-400 text-sm font-semibold mt-2">
-					{props.author}
-				</p>
+				<p className="text-right text-gray-400 text-sm font-semibold mt-2">{props.author}</p>
 			</div>
 		</div>
 	);

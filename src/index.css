@@ -14,8 +14,6 @@ body {
 		rgb(17, 24, 39),
 		rgb(0, 0, 0)
 	);
-
-	overflow-x: hidden;
 }
 
 header > h1 {
@@ -42,4 +40,10 @@ header > h1 {
 	background-color: var(--secondary);
 	border-radius: 14px;
 	border: 3px solid var(--primary);
+}
+
+@media screen and (max-width: 1024px) {
+	body::-webkit-scrollbar {
+		display: none;
+	}
 }
